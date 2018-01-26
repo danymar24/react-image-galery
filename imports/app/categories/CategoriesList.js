@@ -24,7 +24,7 @@ class CategoriesList extends React.Component {
     
     render() {
         const categories = this.state.categories.map(category => {
-            return <li>{category.name}</li>
+            return <li key={category._id}>{category.name}</li>
         });
 
         return (
