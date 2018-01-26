@@ -1,10 +1,13 @@
 import React from 'react';
+import { CategoriesList } from './categories/CategoriesList';
+import { AddCategory } from './categories/AddCategory';
 
 class GalleryScreen extends React.Component {
     render() {
         return (
             <div>
-                This is the gallery screen!
+                <AddCategory />
+                <CategoriesList />
             </div>
         );
     }
