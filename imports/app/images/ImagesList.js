@@ -5,7 +5,6 @@ import { Images } from '../../api/images';
 
 // TODO: Add categories to uploaded image
 // find a way to connect to external mongo db
-// Add download button
 // Add thumbnails
 
 class ImagesList extends React.Component {
@@ -26,6 +25,10 @@ class ImagesList extends React.Component {
             });
         })
     }
+
+    downloadImage = (link) => {
+        window.open(link);
+    }
     
     render() {
         console.log(this.state.images);
@@ -36,6 +39,10 @@ class ImagesList extends React.Component {
                 {image.name}
                 <img src={link} 
                      width='100px'/>
+                <a href = {link}
+                   download = {image.name}>
+                   Download
+                </a>
             </li>
         });
 
