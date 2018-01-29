@@ -9,10 +9,12 @@ class AddCategory extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.addCategory}>
-                <input type='text' ref='name' placeholder='Name' />
-                <button>Add</button>
-            </form>
+            <div>
+                <form onSubmit={this.addCategory}>
+                    <input type='text' ref='name' placeholder='Name' />
+                    <button>Add</button>
+                </form>
+            </div>
         );
     }
 }

@@ -1,1 +1,12 @@
 /* CSS declarations go here */
+
+.image {
+    max-width: 220px;
+    height: 220px;
+    float: left;
+    padding: 5px;
+}
+
+.image .image-description {
+    text-overflow: ellipsis;
+}

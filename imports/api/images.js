@@ -66,5 +66,7 @@ if (Meteor.isServer) {
 }
 
 Meteor.methods({
-
+    'images.remove'(id) {
+        Images.remove({ _id: id});
+    }
 })

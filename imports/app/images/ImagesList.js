@@ -4,7 +4,6 @@ import { Tracker } from 'meteor/tracker';
 import { Images } from '../../api/images';
 
 // TODO: Add categories to uploaded image
-// find a way to connect to external mongo db
 // Add thumbnails
 
 class ImagesList extends React.Component {
@@ -29,28 +28,42 @@ class ImagesList extends React.Component {
     downloadImage = (link) => {
         window.open(link);
     }
+
+    removeImage = (id) => {
+        Meteor.call('images.remove', id);
+    }
     
     render() {
         console.log(this.state.images);
         const images = this.state.images.map(image => {
             let link = Images.findOne({ _id: image._id}).link();
 
-            return <li key={image._id}>
-                {image.name}
-                <img src={link} 
-                     width='100px'/>
-                <a href = {link}
-                   download = {image.name}>
-                   Download
-                </a>
-            </li>
+            return  <div className='image'
+                         key={image._id}>
+                        <img src={link} 
+                            width='100%'/>
+                        <div className='image-description'>
+                            {image.name}
+                        </div>
+                        <div className='image-download'>
+                            <a href = {link}
+                            download = {image.name}>
+                                Download
+                            </a>
+                        </div>
+                        <div>
+                            <span onClick={this.removeImage.bind(this, image._id)}>
+                                Delete
+                            </span>
+                        </div>
+                    </div>
         });
 
         return (
             <div>
-                <ul>
+                <div className='images-list'>
                     {images}
-                </ul>
+                </div>
             </div>
         );
     }

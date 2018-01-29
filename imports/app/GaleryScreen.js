@@ -8,10 +8,12 @@ class GalleryScreen extends React.Component {
     render() {
         return (
             <div>
-                <AddImage />
+                <div className='add-image'>
+                    <AddImage />
+                    <AddCategory />
+                    <CategoriesList />
+                </div>
                 <ImagesList />
-                <AddCategory />
-                <CategoriesList />
             </div>
         );
     }
