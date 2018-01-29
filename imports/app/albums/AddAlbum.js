@@ -1,16 +1,16 @@
 import React from 'react';
 
-class AddCategory extends React.Component {
-    addCategory = (e) => {
+class AddAlbum extends React.Component {
+    addAlbum = (e) => {
         e.preventDefault();
         const name = this.refs.name.value.trim();
-        Meteor.call('categories.insert', { name });
+        Meteor.call('albums.insert', { name });
     }
 
     render() {
         return (
             <div>
-                <form onSubmit={this.addCategory}>
+                <form onSubmit={this.addAlbum}>
                     <input type='text' ref='name' placeholder='Name' />
                     <button>Add</button>
                 </form>
@@ -19,4 +19,4 @@ class AddCategory extends React.Component {
     }
 }
 
-export { AddCategory };
+export { AddAlbum };

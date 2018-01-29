@@ -17,6 +17,7 @@ export const Images = new FilesCollection({
     collectionName: 'images',
     allowClientCode: false,
     onBeforeUpload(file) {
+        file.approved = false;
         if (file.size <= 10485760 && /png|jpg|jpeg/i.test(file.extension)) {
             return true;
         } else {

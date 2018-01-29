@@ -12,5 +12,8 @@ if (Meteor.isServer) {
 Meteor.methods({
     'categories.insert'(category) {
         Categories.insert(category);
+    },
+    'categories.remove'(id) {
+        Categories.remove({ _id: id });
     }
 });

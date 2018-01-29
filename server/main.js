@@ -1,6 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 
-import '../imports/api/categories';
+import '../imports/api/albums';
 import '../imports/api/images';
 
 Meteor.startup(() => {

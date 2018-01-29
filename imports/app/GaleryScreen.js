@@ -1,6 +1,6 @@
 import React from 'react';
-import { CategoriesList } from './categories/CategoriesList';
-import { AddCategory } from './categories/AddCategory';
+import { AlbumsList } from './albums/AlbumsList';
+import { AddAlbum } from './albums/AddAlbum';
 import { AddImage } from './images/AddImage';
 import { ImagesList } from './images/ImagesList';
 
@@ -10,8 +10,8 @@ class GalleryScreen extends React.Component {
             <div>
                 <div className='add-image'>
                     <AddImage />
-                    <AddCategory />
-                    <CategoriesList />
+                    <AddAlbum />
+                    <AlbumsList />
                 </div>
                 <ImagesList />
             </div>

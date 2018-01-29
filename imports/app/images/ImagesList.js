@@ -34,7 +34,6 @@ class ImagesList extends React.Component {
     }
     
     render() {
-        console.log(this.state.images);
         const images = this.state.images.map(image => {
             let link = Images.findOne({ _id: image._id}).link();
 
